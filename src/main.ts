@@ -1,9 +1,17 @@
-import Vue from 'vue'
-import App from './App.vue'
-import './registerServiceWorker'
+import Vue from 'vue';
+import App from './App.vue';
+import VueTouch from 'vue-touch';
+import './registerServiceWorker';
 
-Vue.config.productionTip = false
+VueTouch.config.press = {
+  time: 44,
+  threshold: 1000
+};
+
+Vue.use(VueTouch);
+
+Vue.config.productionTip = false;
 
 new Vue({
   render: h => h(App)
-}).$mount('#app')
+}).$mount('#app');
